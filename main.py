@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import streamlit as st
 
-
 def get_pas_count(lines, min_age):
     total = 0
     saved = 0
@@ -17,12 +16,10 @@ def get_pas_count(lines, min_age):
     Val2 = (total - saved) / total * 100
     return Val1, Val2
 
-
 with open('data.csv') as file:
     text = file.readlines()
 
     print(get_pas_count(text[1:], min_age=0))
-
 
 def get_pas_count(lines, min_age):
     total = 0
@@ -37,11 +34,9 @@ def get_pas_count(lines, min_age):
                 saved += 1
     return saved / total * 100, (total - saved) / total * 100
 
-
 with open('data.csv') as file:
     text = file.readlines()
     print(get_pas_count(text[1:], 30))
-
 
 def get_pas_count(lines, min_age):
     total = 0
@@ -56,7 +51,6 @@ def get_pas_count(lines, min_age):
                 saved += 1
     return saved / total * 100, (total - saved) / total * 100
 
-
 with open('data.csv') as file:
     text = file.readlines()
 
@@ -64,8 +58,8 @@ with open('data.csv') as file:
 
 columns = ['до 30 лет', 'от 30 до 60 лет', 'старше 60 лет']
 st.title('Пассажиры Титаника')
-st.write('Для просмотра информации о доле выживших/погибших пассажиров выберите возраст:')
-choice = st.selectbox('Выберите возраст:', columns)
+st.subheader('Вычислить долю погибших и спасенных пассажиров, указав возрастную категорию из списка - «молодой» (до 30 лет), «среднего возраста» (от 30 до 60) и «старый» (более 60 лет)')
+choice = st.selectbox('Для просмотра информации о доле выживших/погибших пассажиров выберите возраст:', columns)
 index = columns.index(choice)
 
 with open('data.csv') as file:
@@ -84,11 +78,3 @@ plt.ylabel('Доля выживших пассажиров')
 plt.title('Диаграмма')
 plt.bar(x, y)
 st.pyplot(fig)
-
-
-
-
-
-
-
-#def fun():
