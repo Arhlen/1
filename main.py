@@ -15,7 +15,6 @@ def get_pas_count(lines, min_age):
     return round(saved / total * 100, 2), \
         round((total - saved) / total * 100, 2)
     
-def var11_main():
     columns = ['до 30 лет', 'от 30 до 60 лет', 'старше 60 лет']
     st.title('Пассажиры Титаника')
     st.write('Для просмотра информации о доле выживших/погибших пассажиров выберите возраст:')
