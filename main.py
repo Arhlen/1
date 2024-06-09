@@ -35,4 +35,3 @@ def get_pas_count(lines, min_age):
     colors = ['PaleGreen', 'MediumSlateBlue']
     plt.pie(sizes, labels=labels, colors=colors)
     st.pyplot(fig)
-
